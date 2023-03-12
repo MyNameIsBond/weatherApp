@@ -1,21 +1,23 @@
-//
-//  ContentView.swift
-//  WeatherApp
-//
-//  Created by Tony Chaidinis on 12/03/2023.
-//
 
 import SwiftUI
-
+import CoreLocation
 struct ContentView: View {
+  @StateObject private var locationManager = LocationManager()
+  
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+          Text("Last location: \(locationManager.lastLocation?.coordinate.latitude ?? 0), \(locationManager.lastLocation?.coordinate.longitude ?? 0)")
+
+          Button("ELA") {
+          }
         }
         .padding()
+        .onAppear {
+          locationManager.requestLocation()
+        }
     }
 }
 
