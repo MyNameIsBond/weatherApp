@@ -2,10 +2,20 @@
 import Foundation
 
 class APIClient {
+  
+  let apiKey = "81cfeabb4b9ed6029335733752871236"
     
-    func getData(completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    func fetchData(forLatitude latitude: Double, longitude: Double, exclude: String?, apiKey: String, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         
-        guard let url = URL(string: "https://api.example.com/data") else {
+        var urlComponents = URLComponents(string: "https://api.openweathermap.org/data/3.0/onecall")!
+        urlComponents.queryItems = [
+            URLQueryItem(name: "lat", value: String(latitude)),
+            URLQueryItem(name: "lon", value: String(longitude)),
+            URLQueryItem(name: "exclude", value: exclude),
+            URLQueryItem(name: "appid", value: apiKey)
+        ].filter { $0.value != nil }
+        
+        guard let url = urlComponents.url else {
             let error = NSError(domain: "com.example.app", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
             completion(.failure(error))
             return
@@ -33,5 +43,9 @@ class APIClient {
         }
         
         task.resume()
+    }
+    
+    func getWeatherData(forLatitude latitude: Double, longitude: Double, apiKey: String, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+        fetchData(forLatitude: latitude, longitude: longitude, exclude: nil, apiKey: apiKey, completion: completion)
     }
 }
