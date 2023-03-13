@@ -10,9 +10,6 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
           Text("Last location: \(locationManager.lastLocation?.coordinate.latitude ?? 0), \(locationManager.lastLocation?.coordinate.longitude ?? 0)")
-
-          Button("ELA") {
-          }
         }
         .padding()
         .onAppear {
