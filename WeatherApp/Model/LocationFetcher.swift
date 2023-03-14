@@ -11,7 +11,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
         locationManager.delegate = self
     }
 
-    func requestLocation() {
+    func requestLocation() async {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }

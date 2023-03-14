@@ -3,6 +3,7 @@ import SwiftUI
 import CoreLocation
 struct ContentView: View {
   @StateObject private var locationManager = LocationManager()
+  @State var weatherData: [String: Any] = [:]
   var apiClient = APIClient.shared
   var body: some View {
     VStack {
@@ -11,19 +12,28 @@ struct ContentView: View {
         .foregroundColor(.accentColor)
       Text("Last location: \(locationManager.lastLocation?.coordinate.latitude ?? 0), \(locationManager.lastLocation?.coordinate.longitude ?? 0)")
       Button("Show") {
-        apiClient.getWeatherData(forLatitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0, apiKey: apiClient.apiKey) { (result) in
-          switch result {
-          case .success(let data):
-            print("Data: \(data)")
-          case .failure(let error):
-            print("Error: \(error)")
-          }
-        }
+        print(weatherData)
       }
     }
     .padding()
     .onAppear {
-      locationManager.requestLocation()
+      Task {
+        await getData()
+      }
+    }
+  }
+  
+  func getData() async {
+    await locationManager.requestLocation()
+    let lat = locationManager.lastLocation?.coordinate.latitude
+    let long = locationManager.lastLocation?.coordinate.longitude
+    apiClient.getWeatherData(forLatitude: lat ?? 1, longitude: long ?? 1, apiKey: apiClient.apiKey) { result in
+      switch result {
+      case .success(let data):
+        weatherData = data
+      case .failure(let error):
+        print("\(error)")
+      }
     }
   }
 }
@@ -33,3 +43,4 @@ struct ContentView_Previews: PreviewProvider {
     ContentView()
   }
 }
+
