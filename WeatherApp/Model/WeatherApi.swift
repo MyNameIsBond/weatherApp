@@ -1,11 +1,20 @@
 
 import Foundation
 
+struct WeatherData: Codable {
+  let temp: Double
+  let icon: String
+  let humidity: Int
+  let desciption: String
+  let country: String
+  let name: String
+}
+
 class APIClient {
   static let shared = APIClient()
   
   let apiKey = "81cfeabb4b9ed6029335733752871236"
-  
+  let importantData = (["main", ])
   func fetchData(forLatitude latitude: Double, longitude: Double, exclude: String?, apiKey: String, completion: @escaping (Result<[String: Any], Error>) -> Void) {
     
     var urlComponents = URLComponents(string: "https://api.openweathermap.org/data/2.5/weather")!
