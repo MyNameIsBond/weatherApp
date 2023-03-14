@@ -4,32 +4,32 @@ import CoreLocation
 struct ContentView: View {
   @StateObject private var locationManager = LocationManager()
   var apiClient = APIClient.shared
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-          Text("Last location: \(locationManager.lastLocation?.coordinate.latitude ?? 0), \(locationManager.lastLocation?.coordinate.longitude ?? 0)")
-          Button("Show") {
-            apiClient.getWeatherData(forLatitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0, apiKey: apiClient.apiKey) { (result) in
-                switch result {
-                case .success(let data):
-                    print("Data: \(data)")
-                case .failure(let error):
-                    print("Error: \(error)")
-                }
-            }
+  var body: some View {
+    VStack {
+      Image(systemName: "globe")
+        .imageScale(.large)
+        .foregroundColor(.accentColor)
+      Text("Last location: \(locationManager.lastLocation?.coordinate.latitude ?? 0), \(locationManager.lastLocation?.coordinate.longitude ?? 0)")
+      Button("Show") {
+        apiClient.getWeatherData(forLatitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0, apiKey: apiClient.apiKey) { (result) in
+          switch result {
+          case .success(let data):
+            print("Data: \(data)")
+          case .failure(let error):
+            print("Error: \(error)")
           }
         }
-        .padding()
-        .onAppear {
-          locationManager.requestLocation()
-        }
+      }
     }
+    .padding()
+    .onAppear {
+      locationManager.requestLocation()
+    }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
