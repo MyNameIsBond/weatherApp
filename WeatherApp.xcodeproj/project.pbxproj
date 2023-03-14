@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9703890329C0C5900004F677 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703890229C0C5900004F677 /* ImageLoader.swift */; };
 		971E341E29BE3D6800673314 /* WeatherAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E341D29BE3D6800673314 /* WeatherAppApp.swift */; };
 		971E342029BE3D6800673314 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E341F29BE3D6800673314 /* ContentView.swift */; };
 		971E342229BE3D6A00673314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 971E342129BE3D6A00673314 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9703890229C0C5900004F677 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		971E341A29BE3D6800673314 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		971E341D29BE3D6800673314 /* WeatherAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppApp.swift; sourceTree = "<group>"; };
 		971E341F29BE3D6800673314 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				971E344B29BE3DD300673314 /* LocationFetcher.swift */,
 				979F5F7129BFAEDB00348FE0 /* WeatherApi.swift */,
+				9703890229C0C5900004F677 /* ImageLoader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				971E342029BE3D6800673314 /* ContentView.swift in Sources */,
 				979F5F7229BFAEDB00348FE0 /* WeatherApi.swift in Sources */,
+				9703890329C0C5900004F677 /* ImageLoader.swift in Sources */,
 				971E341E29BE3D6800673314 /* WeatherAppApp.swift in Sources */,
 				971E344C29BE3DD300673314 /* LocationFetcher.swift in Sources */,
 			);
