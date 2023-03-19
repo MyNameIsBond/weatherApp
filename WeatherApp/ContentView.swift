@@ -20,7 +20,6 @@ struct ContentView: View {
     .padding()
     .onAppear {
       Task {
-        // async
         await getData()
       }
     }
