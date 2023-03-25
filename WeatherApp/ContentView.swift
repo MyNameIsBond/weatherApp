@@ -15,6 +15,9 @@ struct ContentView: View {
       Button("Show") {
         let e = weatherData.filter { keysToExctract.contains($0.key) }
         print(e)
+      // TODO: Serialize the data
+      // TODO: show the pic of the weather. 
+        
       }
     }
     .padding()
