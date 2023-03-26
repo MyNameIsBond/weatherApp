@@ -17,6 +17,7 @@
 		971E343B29BE3D6A00673314 /* WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E343A29BE3D6A00673314 /* WeatherAppUITestsLaunchTests.swift */; };
 		971E344C29BE3DD300673314 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E344B29BE3DD300673314 /* LocationFetcher.swift */; };
 		979F5F7229BFAEDB00348FE0 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F5F7129BFAEDB00348FE0 /* WeatherApi.swift */; };
+		97E3498E29D0D0300002BEBC /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E3498D29D0D0300002BEBC /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		971E343A29BE3D6A00673314 /* WeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		971E344B29BE3DD300673314 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		979F5F7129BFAEDB00348FE0 /* WeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
+		97E3498D29D0D0300002BEBC /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				971E344B29BE3DD300673314 /* LocationFetcher.swift */,
 				979F5F7129BFAEDB00348FE0 /* WeatherApi.swift */,
 				9703890229C0C5900004F677 /* ImageLoader.swift */,
+				97E3498D29D0D0300002BEBC /* WeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				979F5F7229BFAEDB00348FE0 /* WeatherApi.swift in Sources */,
 				9703890329C0C5900004F677 /* ImageLoader.swift in Sources */,
 				971E341E29BE3D6800673314 /* WeatherAppApp.swift in Sources */,
+				97E3498E29D0D0300002BEBC /* WeatherModel.swift in Sources */,
 				971E344C29BE3DD300673314 /* LocationFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
